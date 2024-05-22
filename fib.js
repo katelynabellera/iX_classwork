@@ -1,17 +1,12 @@
 //print out fib sequence
 
-function fib2(num) {
-    if (num == 0) {
-        console.log(num)
-        return 0;
-    }
-    else if (num == 1) {
-        console.log(num)
-        return 1;
+function fib3(num) { //recursively
+    if (num == 0 || num == 1) {
+        return num;
     }
     else {
-        let result = fib(num-2) + fib(num-1)
-        console.log(result)
+        num = fib3(num-2)+fib3(num-1);
+        return num;
     }
 }
 
@@ -51,4 +46,7 @@ function area(arr) {
 
 console.log("Area of triangle with sides 3 8 and 9: " + area([3, 8, 9]))
 console.log("First 10 nums of Fib Sequence: ") 
-fib(10)
+for (let i = 0; i < 10; i++) {
+    console.log(fib3(i))
+}
+// fib(10)
